@@ -47,6 +47,14 @@ public class ADRoboSherlockActivity extends RoboSherlockActivity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
+	public ListView getMenuListView() {
+		return mDrawerList;
+	}
+	
+	public void showMenuDrawer() {
+		mDrawerLayout.openDrawer(mDrawerList);
+	}
+
 	private android.view.MenuItem getMenuItem(final MenuItem item) {
 		return new android.view.MenuItem() {
 			@Override
