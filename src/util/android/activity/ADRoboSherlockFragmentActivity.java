@@ -18,9 +18,9 @@ import android.view.ViewConfiguration;
 import android.widget.ListView;
 
 import com.actionbarsherlock.view.MenuItem;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
+import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 
-public class ADRoboSherlockActivity extends RoboSherlockActivity {
+public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity {
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
