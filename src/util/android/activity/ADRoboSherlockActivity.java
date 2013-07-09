@@ -56,6 +56,10 @@ public class ADRoboSherlockActivity extends RoboSherlockActivity {
 		mDrawerLayout.openDrawer(findViewById(R.id.left_drawer));
 	}
 
+	public void closeMenuDrawer() {
+		mDrawerLayout.closeDrawer(findViewById(R.id.left_drawer));
+	}
+
 	public void setDrawerScrim(int color) {
 		mDrawerLayout.setScrimColor(color);
 		mDrawerLayout.setDrawerShadow(android.R.color.transparent,

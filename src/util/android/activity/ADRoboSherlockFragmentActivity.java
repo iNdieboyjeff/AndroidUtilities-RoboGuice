@@ -55,6 +55,10 @@ public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity
 	public void showMenuDrawer() {
 		mDrawerLayout.openDrawer(findViewById(R.id.left_drawer));
 	}
+	
+	public void closeMenuDrawer() {
+		mDrawerLayout.closeDrawer(findViewById(R.id.left_drawer));
+	}
 
 	public void setDrawerScrim(int color) {
 		mDrawerLayout.setScrimColor(color);
