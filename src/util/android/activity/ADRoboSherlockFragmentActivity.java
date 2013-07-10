@@ -20,7 +20,8 @@ import android.widget.ListView;
 import com.actionbarsherlock.view.MenuItem;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 
-public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity {
+public class ADRoboSherlockFragmentActivity extends
+		RoboSherlockFragmentActivity {
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -55,7 +56,7 @@ public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity
 	public void showMenuDrawer() {
 		mDrawerLayout.openDrawer(findViewById(R.id.left_drawer));
 	}
-	
+
 	public void closeMenuDrawer() {
 		mDrawerLayout.closeDrawer(findViewById(R.id.left_drawer));
 	}
@@ -362,13 +363,13 @@ public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity
 		R.string.drawer_close /* "close drawer" description for accessibility */
 		) {
 			public void onDrawerClosed(View view) {
-				getSupportActionBar().setTitle(mTitle);
+				// getSupportActionBar().setTitle(mTitle);
 				supportInvalidateOptionsMenu(); // creates call to
 												// onPrepareOptionsMenu()
 			}
 
 			public void onDrawerOpened(View drawerView) {
-				getSupportActionBar().setTitle(mDrawerTitle);
+				// getSupportActionBar().setTitle(mDrawerTitle);
 				supportInvalidateOptionsMenu(); // creates call to
 												// onPrepareOptionsMenu()
 			}
