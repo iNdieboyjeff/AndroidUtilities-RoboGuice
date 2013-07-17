@@ -23,9 +23,9 @@ import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmen
 public class ADRoboSherlockFragmentActivity extends
 		RoboSherlockFragmentActivity {
 
-	private DrawerLayout mDrawerLayout;
-	private ListView mDrawerList;
-	private ActionBarDrawerToggle mDrawerToggle;
+	protected DrawerLayout mDrawerLayout;
+	protected ListView mDrawerList;
+	protected ActionBarDrawerToggle mDrawerToggle;
 
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
