@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.ActionProvider;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -27,8 +26,8 @@ public class ADRoboSherlockFragmentActivity extends
 	protected ListView mDrawerList;
 	protected ActionBarDrawerToggle mDrawerToggle;
 
-	private CharSequence mDrawerTitle;
-	private CharSequence mTitle;
+	protected CharSequence mDrawerTitle;
+	protected CharSequence mTitle;
 
 	/**
 	 * When using the ActionBarDrawerToggle, you must call it during
@@ -40,6 +39,10 @@ public class ADRoboSherlockFragmentActivity extends
 		super.onPostCreate(savedInstanceState);
 		// Sync the toggle state after onRestoreInstanceState has occurred.
 		mDrawerToggle.syncState();
+	}
+
+	public boolean isMenuOpen() {
+		return mDrawerLayout.isDrawerOpen(findViewById(R.id.left_drawer));
 	}
 
 	@Override
@@ -63,8 +66,11 @@ public class ADRoboSherlockFragmentActivity extends
 
 	public void setDrawerScrim(int color) {
 		mDrawerLayout.setScrimColor(color);
-		mDrawerLayout.setDrawerShadow(android.R.color.transparent,
-				GravityCompat.START);
+		
+	}
+	
+	public void setDrawerShadow(int color, int gravity) {
+		mDrawerLayout.setDrawerShadow(color, gravity);
 	}
 
 	private android.view.MenuItem getMenuItem(final MenuItem item) {
