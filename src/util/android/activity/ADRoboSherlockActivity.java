@@ -2,6 +2,9 @@ package util.android.activity;
 
 import java.lang.reflect.Field;
 
+import com.actionbarsherlock.view.MenuItem;
+import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
+
 import util.android.roboguice.R;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -17,8 +20,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.ListView;
 
-import com.actionbarsherlock.view.MenuItem;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
+
 
 public class ADRoboSherlockActivity extends RoboSherlockActivity {
 

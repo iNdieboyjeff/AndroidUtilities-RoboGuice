@@ -2,6 +2,9 @@ package util.android.activity;
 
 import java.lang.reflect.Field;
 
+import com.actionbarsherlock.view.MenuItem;
+import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
+
 import util.android.roboguice.R;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -16,11 +19,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.ListView;
 
-import com.actionbarsherlock.view.MenuItem;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
-
-public class ADRoboSherlockFragmentActivity extends
-		RoboSherlockFragmentActivity {
+public class ADRoboSherlockFragmentActivity extends RoboSherlockFragmentActivity {
 
 	protected DrawerLayout mDrawerLayout;
 	protected ListView mDrawerList;
@@ -30,8 +29,7 @@ public class ADRoboSherlockFragmentActivity extends
 	protected CharSequence mTitle;
 
 	/**
-	 * When using the ActionBarDrawerToggle, you must call it during
-	 * onPostCreate() and onConfigurationChanged()...
+	 * When using the ActionBarDrawerToggle, you must call it during onPostCreate() and onConfigurationChanged()...
 	 */
 
 	@Override
@@ -66,9 +64,9 @@ public class ADRoboSherlockFragmentActivity extends
 
 	public void setDrawerScrim(int color) {
 		mDrawerLayout.setScrimColor(color);
-		
+
 	}
-	
+
 	public void setDrawerShadow(int color, int gravity) {
 		mDrawerLayout.setDrawerShadow(color, gravity);
 	}
@@ -199,8 +197,7 @@ public class ADRoboSherlockFragmentActivity extends
 			}
 
 			@Override
-			public android.view.MenuItem setActionProvider(
-					ActionProvider actionProvider) {
+			public android.view.MenuItem setActionProvider(ActionProvider actionProvider) {
 				// TODO Auto-generated method stub
 				return null;
 			}
@@ -266,22 +263,19 @@ public class ADRoboSherlockFragmentActivity extends
 			}
 
 			@Override
-			public android.view.MenuItem setOnActionExpandListener(
-					OnActionExpandListener listener) {
+			public android.view.MenuItem setOnActionExpandListener(OnActionExpandListener listener) {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
-			public android.view.MenuItem setOnMenuItemClickListener(
-					OnMenuItemClickListener menuItemClickListener) {
+			public android.view.MenuItem setOnMenuItemClickListener(OnMenuItemClickListener menuItemClickListener) {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
-			public android.view.MenuItem setShortcut(char numericChar,
-					char alphaChar) {
+			public android.view.MenuItem setShortcut(char numericChar, char alphaChar) {
 				// TODO Auto-generated method stub
 				return null;
 			}
@@ -340,18 +334,15 @@ public class ADRoboSherlockFragmentActivity extends
 		getSupportActionBar().setHomeButtonEnabled(true);
 
 		/**
-		 * This may be debatable, but as per
-		 * https://code.google.com/p/android/issues/detail?id=38013 on ICS (4+)
-		 * devices with a hardware menu key, show the menu as an overflow item
-		 * in the ActionBar anyway, to indicate that it is available.
+		 * This may be debatable, but as per https://code.google.com/p/android/issues/detail?id=38013 on ICS (4+)
+		 * devices with a hardware menu key, show the menu as an overflow item in the ActionBar anyway, to indicate that
+		 * it is available.
 		 * 
-		 * It technically goes against the design guidelines, but Google do this
-		 * in their own apps.
+		 * It technically goes against the design guidelines, but Google do this in their own apps.
 		 */
 		try {
 			ViewConfiguration config = ViewConfiguration.get(this);
-			Field menuKeyField = ViewConfiguration.class
-					.getDeclaredField("sHasPermanentMenuKey");
+			Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
 			if (menuKeyField != null) {
 				menuKeyField.setAccessible(true);
 				menuKeyField.setBoolean(config, false);
